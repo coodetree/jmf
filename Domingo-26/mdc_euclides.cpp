@@ -7,12 +7,14 @@ int main()
     int a;
     int b;
     int r;
-
+    
     cout << "Digite o valor de(A): ";
     cin >> a;
 
     cout << "Digite o valor de (B): ";
     cin >> b;
+
+    int c = a * b;
 
     while (b != 0)
     {
@@ -22,5 +24,10 @@ int main()
         b = r;
     }
 
-    cout << "MDC = " << a << "\n";
+    // mmc calculo
+    int mmc = c / a;
+
+    cout << "MDC : " << a << " | MMC : " << mmc << "\n";
+
+    return 0;
 }
