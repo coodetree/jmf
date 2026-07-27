@@ -1,0 +1,35 @@
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    int numero;
+
+    cout << "Digite um numero inteiro positivo: ";
+    cin >> numero;
+
+    // Guardamos o valor original porque vamos modificar a variável 'numero' para extrair os dígitos
+    int numeroOriginal = numero; 
+    int soma = 0;
+
+    // Validação para garantir que o número é positivo
+    if (numero <= 0) {
+        cout << "Por favor, insira um numero maior que zero." << endl;
+        return 0;
+    }
+
+    // Loop direto para somar os dígitos
+    while (numero > 0) {
+        soma += numero % 10; // Soma o último dígito
+        numero /= 10;        // Remove o último dígito
+    }
+
+    // Verifica a divisibilidade usando o valor original guardado
+    if (numeroOriginal % soma == 0) {
+        cout << numeroOriginal << " eh um numero de Harshad." << endl;
+    } else {
+        cout << numeroOriginal << " nao eh um numero de Harshad." << endl;
+    }
+
+    return 0;
+}
